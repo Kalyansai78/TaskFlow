@@ -1,0 +1,317 @@
+.tf-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e5e9df;
+    backdrop-filter: blur(14px);
+}
+
+.tf-navbar-container {
+    width: min(1200px, calc(100% - 64px));
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+/* BRAND */
+
+.tf-navbar-brand {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 11px;
+    color: #263c32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.tf-navbar-brand:hover {
+    color: #263c32;
+}
+
+.tf-navbar-brand > span:last-child > span {
+    color: #527966;
+}
+
+.tf-navbar-logo {
+    width: 41px;
+    height: 41px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #6f967d, #527966);
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 5px 13px rgba(82, 121, 102, 0.18);
+}
+
+/* NAVIGATION */
+
+.tf-navbar-menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.tf-navbar-links,
+.tf-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.tf-navbar-link {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 15px;
+    border-radius: 9px;
+    color: #78857b;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tf-navbar-link:hover {
+    background: #f3f6f0;
+    color: #527966;
+}
+
+.tf-navbar-link-active {
+    background: #edf4ed;
+    color: #527966;
+}
+
+.tf-navbar-link svg {
+    font-size: 16px;
+}
+
+/* SIGN IN AND SIGN UP */
+
+.tf-navbar-signin {
+    padding: 10px 15px;
+    border-radius: 9px;
+    color: #527966;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.tf-navbar-signin:hover {
+    background: #edf4ed;
+    color: #3f6350;
+}
+
+.tf-navbar-signup {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 19px;
+    border: 1px solid #527966;
+    border-radius: 10px;
+    background: #527966;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(82, 121, 102, 0.12);
+}
+
+.tf-navbar-signup:hover {
+    transform: translateY(-2px);
+    background: #3f6350;
+    border-color: #3f6350;
+    color: #fff;
+}
+
+/* USER PROFILE */
+
+.tf-navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 13px;
+    border-right: 1px solid #e5e9df;
+}
+
+.tf-navbar-avatar {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background: #dde9df;
+    color: #3f6350;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 0 0 1px #e5e9df;
+}
+
+.tf-navbar-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-width: 170px;
+}
+
+.tf-navbar-user-info strong {
+    overflow: hidden;
+    color: #263c32;
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tf-navbar-user-info span {
+    overflow: hidden;
+    color: #89968b;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tf-navbar-logout {
+    min-height: 39px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #78857b;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.tf-navbar-logout svg {
+    font-size: 16px;
+}
+
+.tf-navbar-logout:hover {
+    border-color: #f1dcd8;
+    background: #fff1ee;
+    color: #c96a63;
+}
+
+/* MOBILE TOGGLE */
+
+.tf-navbar-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid #e5e9df;
+    border-radius: 10px;
+    background: #fff;
+    color: #527966;
+    font-size: 21px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .tf-navbar-container {
+        width: calc(100% - 36px);
+        min-height: 70px;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .tf-navbar-brand {
+        font-size: 21px;
+    }
+
+    .tf-navbar-toggle {
+        display: grid;
+    }
+
+    .tf-navbar-menu {
+        width: 100%;
+        flex: auto;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 0 20px;
+        border-top: 1px solid #edf0e9;
+    }
+
+    .tf-navbar-menu.tf-navbar-menu-open {
+        display: flex;
+        animation: navbarSlideDown 0.22s ease both;
+    }
+
+    .tf-navbar-links {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tf-navbar-link {
+        min-height: 43px;
+    }
+
+    .tf-navbar-actions {
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 13px;
+        border-top: 1px solid #edf0e9;
+    }
+
+    .tf-navbar-profile {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .tf-navbar-user-info {
+        max-width: 190px;
+    }
+}
+
+@keyframes navbarSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 380px) {
+    .tf-navbar-container {
+        width: calc(100% - 28px);
+    }
+
+    .tf-navbar-user-info {
+        max-width: 125px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-navbar *,
+    .tf-navbar *::before,
+    .tf-navbar *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

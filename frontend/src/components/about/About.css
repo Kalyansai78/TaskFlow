@@ -1,0 +1,654 @@
+.tf-about {
+    width: 100%;
+    overflow: hidden;
+    background: #F5F5EF;
+    color: #263C32;
+    font-family: "DM Sans", sans-serif;
+}
+
+.tf-about * {
+    box-sizing: border-box;
+}
+
+.tf-about-container {
+    width: min(1160px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+/* HERO */
+
+.tf-about-hero {
+    padding: 90px 0;
+    background:
+        radial-gradient(circle at 85% 40%, rgba(221, 233, 223, 0.65), transparent 30%),
+        #F5F5EF;
+}
+
+.tf-about-hero .tf-about-container {
+    min-height: 410px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.tf-about-hero-content {
+    animation: tfAboutFadeUp 0.7s ease both;
+}
+
+.tf-about-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    margin-bottom: 25px;
+    border: 1px solid #dce8dc;
+    border-radius: 30px;
+    background: #edf4ed;
+    color: #527966;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.tf-about-hero-content h1 {
+    max-width: 580px;
+    margin: 0 0 20px;
+    color: #263C32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(40px, 5vw, 59px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.2;
+}
+
+.tf-about-hero-content h1 span {
+    display: block;
+    color: #527966;
+}
+
+.tf-about-hero-content > p {
+    max-width: 500px;
+    margin: 0;
+    color: #78857B;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.tf-about-primary {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 21px;
+    margin-top: 29px;
+    border: 1px solid #527966;
+    border-radius: 10px;
+    background: #527966;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(82, 121, 102, 0.15);
+    transition: all 0.25s ease;
+}
+
+.tf-about-primary:hover {
+    transform: translateY(-2px);
+    border-color: #3f6350;
+    background: #3f6350;
+    color: #fff;
+    box-shadow: 0 9px 20px rgba(82, 121, 102, 0.2);
+}
+
+.tf-about-primary svg {
+    font-size: 17px;
+}
+
+/* HERO VISUAL */
+
+.tf-about-hero-visual {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: tfAboutScale 0.7s ease both;
+}
+
+.tf-about-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.tf-about-circle-one {
+    width: 300px;
+    height: 300px;
+    background: #e4eee2;
+}
+
+.tf-about-circle-two {
+    width: 370px;
+    height: 370px;
+    border: 1px solid rgba(111, 152, 121, 0.2);
+}
+
+.tf-about-quote-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 370px;
+    padding: 34px;
+    border: 1px solid #e5ebe1;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 22px 55px rgba(38, 60, 50, 0.1);
+}
+
+.tf-about-quote-icon {
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: #eaf3e9;
+    color: #527966;
+    font-size: 23px;
+}
+
+.tf-about-quote-card > span {
+    color: #76967b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tf-about-quote-card h2 {
+    margin: 13px 0 20px;
+    color: #304638;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    line-height: 1.5;
+}
+
+.tf-about-quote-line {
+    width: 42px;
+    height: 3px;
+    border-radius: 10px;
+    background: #8cab8c;
+}
+
+.tf-about-quote-card p {
+    margin: 17px 0 0;
+    color: #8a988b;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.tf-about-floating {
+    position: absolute;
+    z-index: 3;
+    right: -15px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px 16px;
+    border: 1px solid #e5ebe1;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(38, 60, 50, 0.09);
+    animation: tfAboutFloat 4s ease-in-out infinite;
+}
+
+.tf-about-floating > svg {
+    color: #638c6e;
+    font-size: 24px;
+}
+
+.tf-about-floating div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tf-about-floating strong {
+    color: #354a3b;
+    font-size: 10px;
+}
+
+.tf-about-floating span {
+    color: #929e93;
+    font-size: 9px;
+}
+
+/* MISSION */
+
+.tf-about-mission {
+    padding: 78px 0;
+    background: #fff;
+}
+
+.tf-about-mission-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 100px;
+}
+
+.tf-about-mission-heading > span,
+.tf-about-section-heading > span {
+    color: #6d9274;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tf-about-mission-heading h2 {
+    margin: 15px 0 0;
+    color: #263C32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.3;
+}
+
+.tf-about-mission-heading h2 span {
+    display: block;
+    color: #527966;
+}
+
+.tf-about-mission-copy p {
+    margin: 0 0 17px;
+    color: #78857B;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.tf-about-mission-copy p:last-child {
+    margin-bottom: 0;
+}
+
+/* FEATURES */
+
+.tf-about-features {
+    padding: 85px 0 95px;
+    background: #F5F5EF;
+}
+
+.tf-about-section-heading {
+    max-width: 620px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.tf-about-section-heading h2 {
+    margin: 13px 0;
+    color: #263C32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.35;
+}
+
+.tf-about-section-heading p {
+    margin: 0;
+    color: #849187;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.tf-about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.tf-about-feature-card {
+    padding: 24px 21px;
+    border: 1px solid #e5ebe1;
+    border-radius: 16px;
+    background: #fff;
+    animation: tfAboutFadeUp 0.6s ease both;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tf-about-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 28px rgba(38, 60, 50, 0.07);
+}
+
+.tf-about-feature-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    background: #eaf3e9;
+    color: #527966;
+    font-size: 21px;
+}
+
+.tf-about-feature-card:nth-child(2) .tf-about-feature-icon {
+    background: #fff3e5;
+    color: #b9874d;
+}
+
+.tf-about-feature-card:nth-child(3) .tf-about-feature-icon {
+    background: #edf2ee;
+    color: #668b78;
+}
+
+.tf-about-feature-card:nth-child(4) .tf-about-feature-icon {
+    background: #f1edff;
+    color: #8170b9;
+}
+
+.tf-about-feature-card h3 {
+    margin: 0 0 11px;
+    color: #314638;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.tf-about-feature-card p {
+    margin: 0;
+    color: #849187;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* VALUES */
+
+.tf-about-values {
+    padding: 85px 0;
+    background: #fff;
+}
+
+.tf-about-values-content {
+    max-width: 670px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tf-about-values-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 21px;
+    border-radius: 16px;
+    background: #eaf3e9;
+    color: #527966;
+    font-size: 25px;
+}
+
+.tf-about-values-content > span {
+    color: #6d9274;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tf-about-values-content h2 {
+    margin: 14px 0;
+    color: #263C32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(26px, 3vw, 37px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.35;
+}
+
+.tf-about-values-content > p {
+    max-width: 570px;
+    margin: 0 auto;
+    color: #849187;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.tf-about-value-points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 29px;
+}
+
+.tf-about-value-points div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #63836b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.tf-about-value-points svg {
+    font-size: 15px;
+}
+
+/* CTA */
+
+.tf-about-cta {
+    padding: 78px 0;
+    background: #edf3e9;
+    text-align: center;
+}
+
+.tf-about-cta > .tf-about-container > span {
+    color: #6d9274;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tf-about-cta h2 {
+    margin: 14px 0;
+    color: #263C32;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1.3px;
+}
+
+.tf-about-cta p {
+    max-width: 510px;
+    margin: 0 auto;
+    color: #78857B;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.tf-about-cta .tf-about-primary {
+    margin-top: 25px;
+}
+
+/* ANIMATIONS */
+
+@keyframes tfAboutFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tfAboutScale {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes tfAboutFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .tf-about-feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tf-about-mission-grid {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .tf-about-hero .tf-about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .tf-about-hero-content {
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .tf-about-hero-content h1,
+    .tf-about-hero-content > p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .tf-about-hero-visual {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .tf-about-floating {
+        right: 0;
+    }
+
+    .tf-about-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tf-about-container {
+        width: calc(100% - 36px);
+    }
+
+    .tf-about-hero {
+        padding: 60px 0;
+    }
+
+    .tf-about-hero-content h1 {
+        font-size: 39px;
+        letter-spacing: -1.8px;
+    }
+
+    .tf-about-hero-content > p {
+        font-size: 12px;
+    }
+
+    .tf-about-hero-visual {
+        min-height: 340px;
+    }
+
+    .tf-about-quote-card {
+        max-width: 330px;
+        padding: 25px;
+    }
+
+    .tf-about-quote-card h2 {
+        font-size: 20px;
+    }
+
+    .tf-about-circle-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .tf-about-circle-two {
+        width: 310px;
+        height: 310px;
+    }
+
+    .tf-about-floating {
+        right: -4px;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    .tf-about-mission {
+        padding: 60px 0;
+    }
+
+    .tf-about-mission-heading h2 {
+        font-size: 32px;
+    }
+
+    .tf-about-features {
+        padding: 65px 0;
+    }
+
+    .tf-about-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .tf-about-feature-card {
+        padding: 22px;
+    }
+
+    .tf-about-values {
+        padding: 65px 0;
+    }
+
+    .tf-about-value-points {
+        align-items: flex-start;
+        flex-direction: column;
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        gap: 13px;
+    }
+
+    .tf-about-cta {
+        padding: 65px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-about *,
+    .tf-about *::before,
+    .tf-about *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}

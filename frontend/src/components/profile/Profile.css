@@ -1,0 +1,465 @@
+.tf-profile-page {
+    min-height: 100vh;
+    padding: 55px 24px;
+    background: #F5F5EF;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.tf-profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tf-profile-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: none;
+    background: transparent;
+    color: #527966;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+
+.tf-profile-back:hover {
+    color: #263C32;
+}
+
+.tf-profile-heading {
+    margin-bottom: 30px;
+}
+
+.tf-profile-heading > span {
+    color: #527966;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tf-profile-heading h1 {
+    color: #263C32;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.tf-profile-heading p {
+    color: #78847C;
+    font-size: 14px;
+}
+
+.tf-profile-card {
+    background: #FFFFFF;
+    border: 1px solid #E7EBE5;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(38, 60, 50, 0.05);
+}
+
+.tf-profile-banner {
+    height: 115px;
+    background: linear-gradient(120deg, #DDE9DF, #EAF0E9);
+}
+
+.tf-profile-user {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 35px;
+    margin-top: -35px;
+    position: relative;
+}
+
+.tf-profile-avatar {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: #527966;
+    color: white;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.tf-profile-user-details {
+    padding-top: 32px;
+    flex: 1;
+    min-width: 0;
+}
+
+.tf-profile-user-details h2 {
+    color: #263C32;
+    font-size: 21px;
+    margin: 0 0 5px;
+}
+
+.tf-profile-user-details p {
+    color: #87918A;
+    font-size: 13px;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.tf-profile-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    background: #EDF5EE;
+    color: #527966;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.tf-profile-status span {
+    width: 7px;
+    height: 7px;
+    background: #4B9A67;
+    border-radius: 50%;
+}
+
+.tf-profile-divider {
+    height: 1px;
+    background: #EEF0EC;
+    margin: 30px 35px;
+}
+
+.tf-profile-section-heading {
+    padding: 0 35px;
+}
+
+.tf-profile-section-heading h3 {
+    color: #263C32;
+    font-size: 17px;
+    margin: 0 0 7px;
+}
+
+.tf-profile-section-heading p {
+    color: #929B94;
+    font-size: 13px;
+    margin: 0;
+}
+
+.tf-profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px 35px 38px;
+}
+
+.tf-profile-info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.tf-profile-info-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: #EFF4EF;
+    color: #527966;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.tf-profile-info-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.tf-profile-info-item label {
+    color: #929B94;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tf-profile-info-item strong {
+    color: #34483B;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.tf-profile-id {
+    font-size: 11px !important;
+}
+
+.tf-profile-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 35px;
+    background: #FAFBF8;
+    border-top: 1px solid #EEF0EC;
+    color: #89938B;
+    font-size: 11px;
+}
+
+.tf-profile-footer span:first-child {
+    color: #527966;
+    font-weight: 700;
+}
+
+.tf-profile-loading,
+.tf-profile-error {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    color: #527966;
+}
+
+.tf-profile-spinner {
+    font-size: 28px;
+    animation: tf-profile-rotate 1s linear infinite;
+}
+
+@keyframes tf-profile-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tf-profile-error h2 {
+    color: #263C32;
+}
+
+.tf-profile-error button {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #527966;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .tf-profile-page {
+        padding: 35px 16px;
+    }
+
+    .tf-profile-heading h1 {
+        font-size: 28px;
+    }
+
+    .tf-profile-user {
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+
+    .tf-profile-status {
+        margin: 0 0 15px 100px;
+    }
+
+    .tf-profile-divider {
+        margin: 20px;
+    }
+
+    .tf-profile-section-heading {
+        padding: 0 20px;
+    }
+
+    .tf-profile-info-grid {
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
+        gap: 22px;
+    }
+
+    .tf-profile-footer {
+        padding: 18px 20px;
+        flex-direction: column;
+    }
+}
+
+
+/* PROFILE SECTION HEADING UPDATE */
+
+.tf-profile-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* EDIT PROFILE BUTTON */
+
+.tf-profile-edit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid #dce8dd;
+    border-radius: 9px;
+    background: #edf4ed;
+    color: #527966;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.tf-profile-edit-btn:hover {
+    background: #527966;
+    color: #fff;
+    border-color: #527966;
+}
+
+/* EDITABLE FIELDS */
+
+.tf-profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.tf-profile-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #dce5dc;
+    border-radius: 8px;
+    outline: none;
+    background: #fafcf9;
+    color: #34483b;
+    font-family: inherit;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.tf-profile-field input:focus {
+    border-color: #527966;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(82, 121, 102, 0.09);
+}
+
+/* NOTIFICATION */
+
+.tf-profile-message {
+    margin: 22px 35px 0;
+    padding: 12px 15px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.tf-profile-message.success {
+    background: #edf6ed;
+    border: 1px solid #d6e9d8;
+    color: #3f7650;
+}
+
+.tf-profile-message.error {
+    background: #fff1ee;
+    border: 1px solid #f3d9d3;
+    color: #b6534c;
+}
+
+/* FORM ACTIONS */
+
+.tf-profile-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    padding: 0 35px 30px;
+}
+
+.tf-profile-save-btn,
+.tf-profile-cancel-btn {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 17px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tf-profile-save-btn {
+    border: 1px solid #527966;
+    background: #527966;
+    color: #fff;
+}
+
+.tf-profile-save-btn:hover:not(:disabled) {
+    background: #3f6350;
+    border-color: #3f6350;
+    transform: translateY(-1px);
+}
+
+.tf-profile-cancel-btn {
+    border: 1px solid #e5e9e2;
+    background: #fff;
+    color: #78857b;
+}
+
+.tf-profile-cancel-btn:hover:not(:disabled) {
+    background: #f5f6f2;
+    color: #34483b;
+}
+
+.tf-profile-save-btn:disabled,
+.tf-profile-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE EDITING */
+
+@media (max-width: 650px) {
+    .tf-profile-section-heading {
+        align-items: flex-start;
+    }
+
+    .tf-profile-edit-btn {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .tf-profile-message {
+        margin: 20px 20px 0;
+    }
+
+    .tf-profile-form-actions {
+        padding: 0 20px 25px;
+        flex-wrap: wrap;
+    }
+
+    .tf-profile-save-btn,
+    .tf-profile-cancel-btn {
+        flex: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-profile-spinner {
+        animation-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,48 @@
+.tf-footer {
+    width: 100%;
+    padding: 0 24px;
+    background: #fff;
+    border-top: 1px solid #e5e9df;
+    font-family: "DM Sans", sans-serif;
+}
+
+.tf-footer-bottom {
+    width: 100%;
+    max-width: 1160px;
+    min-height: 65px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tf-footer-bottom p {
+    margin: 0;
+    color: #849187;
+    font-size: 11px;
+}
+
+.tf-footer-made {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tf-footer-made svg {
+    color: #c77d76;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .tf-footer {
+        padding: 15px 18px;
+    }
+
+    .tf-footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 9px;
+    }
+}
