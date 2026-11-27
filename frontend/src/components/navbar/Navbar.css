@@ -18,7 +18,7 @@
     margin: 0 auto;
 }
 
-/* BRAND */
+/* Brand */
 
 .tf-navbar-brand {
     display: inline-flex;
@@ -52,7 +52,7 @@
     box-shadow: 0 5px 13px rgba(82, 121, 102, 0.18);
 }
 
-/* NAVIGATION */
+/* Navigation */
 
 .tf-navbar-menu {
     flex: 1;
@@ -96,7 +96,7 @@
     font-size: 16px;
 }
 
-/* SIGN IN AND SIGN UP */
+/* Sign In And Sign Up */
 
 .tf-navbar-signin {
     padding: 10px 15px;
@@ -135,7 +135,7 @@
     color: #fff;
 }
 
-/* USER PROFILE */
+/* User Profile */
 
 .tf-navbar-profile {
     display: flex;
@@ -157,6 +157,7 @@
     font-size: 12px;
     font-weight: 800;
     box-shadow: 0 0 0 1px #e5e9df;
+    flex-shrink: 0;
 }
 
 .tf-navbar-user-info {
@@ -209,7 +210,52 @@
     color: #c96a63;
 }
 
-/* MOBILE TOGGLE */
+/* Notification Bell */
+
+.tf-navbar-notification {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e5e9df;
+    border-radius: 11px;
+    background: #fff;
+    color: #527966;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tf-navbar-notification:hover {
+    border-color: #cbdccd;
+    background: #edf4ed;
+    color: #3f6350;
+    transform: translateY(-2px);
+}
+
+.tf-notification-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background: #d96b62;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Mobile Toggle */
 
 .tf-navbar-toggle {
     display: none;
@@ -223,7 +269,7 @@
     font-size: 21px;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 
 @media (max-width: 800px) {
     .tf-navbar-container {
@@ -231,6 +277,8 @@
         min-height: 70px;
         flex-wrap: wrap;
         gap: 0;
+        padding-top: 5px;
+        padding-bottom: 12px;
     }
 
     .tf-navbar-brand {
@@ -249,7 +297,18 @@
         flex-direction: column;
         gap: 16px;
         padding: 16px 0 20px;
-        border-top: 1px solid #edf0e9;
+        border-top: none;
+        position: relative;
+    }
+
+    .tf-navbar-menu::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #edf0e9;
     }
 
     .tf-navbar-menu.tf-navbar-menu-open {
@@ -281,8 +340,19 @@
         min-width: 0;
     }
 
-    .tf-navbar-user-info {
-        max-width: 190px;
+   .tf-navbar-user-info {
+        max-width: 125px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .tf-navbar-user-info span {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 
@@ -314,4 +384,141 @@
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Mobile Menu Separators */
+
+@media (max-width: 800px) {
+    :root[data-theme="dark"] .tf-navbar-menu {
+        border-top-color: var(--border);
+    }
+
+    :root[data-theme="dark"] .tf-navbar-actions {
+        border-top-color: var(--border);
+    }
+}
+
+/* ==================== Navbar - Dark Mode ==================== */
+
+/* Main Navbar */
+
+:root[data-theme="dark"] .tf-navbar {
+    background: rgba(24, 34, 28, 0.94);
+    border-bottom-color: var(--border);
+}
+
+/* Brand */
+
+:root[data-theme="dark"] .tf-navbar-brand,
+:root[data-theme="dark"] .tf-navbar-brand:hover {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-brand > span:last-child > span {
+    color: var(--primary);
+}
+
+/* Navigation Links */
+
+:root[data-theme="dark"] .tf-navbar-link {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-navbar-link:hover {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-link-active {
+    background: #294436;
+    color: #A9D5B5;
+}
+
+/* Sign In And Sign Up */
+
+:root[data-theme="dark"] .tf-navbar-signin {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-signin:hover {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-signup {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .tf-navbar-signup:hover {
+    background: #A9D5B5;
+    border-color: #A9D5B5;
+    color: #17231B;
+}
+
+/* User Profile */
+
+:root[data-theme="dark"] .tf-navbar-profile {
+    border-right-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-navbar-avatar {
+    background: var(--surface-soft);
+    border-color: var(--surface);
+    color: var(--primary);
+    box-shadow: 0 0 0 1px var(--border);
+}
+
+:root[data-theme="dark"] .tf-navbar-user-info strong {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-user-info span {
+    color: var(--text-secondary);
+}
+
+/* LogOut */
+
+:root[data-theme="dark"] .tf-navbar-logout {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-navbar-logout:hover {
+    background: #492E2D;
+    border-color: #68413D;
+    color: #E58A82;
+}
+
+/* Mobile Toggle */
+
+:root[data-theme="dark"] .tf-navbar-toggle {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--primary);
+}
+
+/* Notification Bell */
+
+:root[data-theme="dark"] .tf-navbar-notification {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-navbar-notification:hover {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-notification-count {
+    border-color: var(--surface);
+    background: #D96B62;
+    color: #fff;
+}
+
+:root[data-theme="dark"] .tf-navbar-menu::before {
+    background: var(--border);
 }

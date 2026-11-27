@@ -1,5 +1,6 @@
 .tf-footer {
     width: 100%;
+    box-sizing: border-box;
     padding: 0 24px;
     background: #fff;
     border-top: 1px solid #e5e9df;
@@ -10,6 +11,7 @@
     width: 100%;
     max-width: 1160px;
     min-height: 65px;
+    box-sizing: border-box;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -45,4 +47,19 @@
         justify-content: center;
         gap: 9px;
     }
+}
+
+/* ==================== Footer - Dark Mode ==================== */
+
+:root[data-theme="dark"] .tf-footer {
+    background: var(--surface);
+    border-top-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-footer-bottom p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-footer-made svg {
+    color: #E58A82;
 }

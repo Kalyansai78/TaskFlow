@@ -1,0 +1,1457 @@
+.tf-settings-page {
+    min-height: 100vh;
+    padding: 55px 24px;
+    background: #F5F5EF;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.tf-settings-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tf-settings-heading {
+    margin-bottom: 30px;
+}
+
+.tf-settings-heading > span {
+    color: #527966;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tf-settings-heading h1 {
+    color: #263C32;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.tf-settings-heading p {
+    color: #78847C;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tf-settings-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.tf-settings-sidebar,
+.tf-settings-content {
+    background: #FFFFFF;
+    border: 1px solid #E7EBE5;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(38, 60, 50, 0.04);
+}
+
+.tf-settings-sidebar {
+    padding: 22px 15px;
+}
+
+.tf-settings-sidebar h3 {
+    color: #929B94;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    margin: 0 10px 17px;
+}
+
+.tf-settings-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 11px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #78847C;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tf-settings-nav:hover {
+    background: #F5F8F4;
+    color: #34483B;
+}
+
+.tf-settings-nav.active {
+    background: #EDF4ED;
+    border-color: #DCE8DD;
+    color: #527966;
+}
+
+.tf-settings-nav-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #F1F4F0;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.tf-settings-nav.active .tf-settings-nav-icon {
+    background: #DDEADF;
+}
+
+.tf-settings-nav-text {
+    flex: 1;
+}
+
+.tf-settings-content {
+    min-height: 350px;
+    padding: 30px;
+}
+
+.tf-settings-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #EEF0EC;
+}
+
+.tf-settings-section-heading > span {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EDF4ED;
+    color: #527966;
+    border-radius: 12px;
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.tf-settings-section-heading h2 {
+    color: #263C32;
+    font-size: 18px;
+    margin: 0 0 6px;
+}
+
+.tf-settings-section-heading p {
+    color: #929B94;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.tf-settings-placeholder {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px dashed #DCE5DC;
+    border-radius: 10px;
+    background: #FAFBF8;
+    color: #87918A;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Change Password Form */
+
+.tf-settings-message {
+    margin-top: 22px;
+    padding: 12px 15px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.tf-settings-message.success {
+    background: #edf6ed;
+    border: 1px solid #d6e9d8;
+    color: #3f7650;
+}
+
+.tf-settings-message.error {
+    background: #fff1ee;
+    border: 1px solid #f3d9d3;
+    color: #b6534c;
+}
+
+.tf-settings-password-form {
+    max-width: 520px;
+    margin-top: 28px;
+}
+
+.tf-settings-password-title {
+    margin-bottom: 23px;
+}
+
+.tf-settings-password-title h3 {
+    color: #263C32;
+    font-size: 16px;
+    margin: 0 0 7px;
+}
+
+.tf-settings-password-title p {
+    color: #929B94;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.tf-settings-password-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 19px;
+}
+
+.tf-settings-password-field label {
+    color: #52665A;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tf-settings-password-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #DCE5DC;
+    border-radius: 9px;
+    background: #FAFCF9;
+    transition: all 0.2s ease;
+}
+
+.tf-settings-password-input:focus-within {
+    border-color: #527966;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(82, 121, 102, 0.09);
+}
+
+.tf-settings-password-input input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #34483B;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.tf-settings-password-input button {
+    display: grid;
+    place-items: center;
+    padding: 10px 13px;
+    border: none;
+    background: transparent;
+    color: #87918A;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tf-settings-password-hint {
+    margin: 5px 0 20px;
+    color: #929B94;
+    font-size: 11px;
+}
+
+.tf-settings-save-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 43px;
+    padding: 0 19px;
+    border: 1px solid #527966;
+    border-radius: 9px;
+    background: #527966;
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tf-settings-save-btn:hover:not(:disabled) {
+    background: #3F6350;
+    transform: translateY(-1px);
+}
+
+.tf-settings-save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Notification Preferences */
+
+.tf-notification-settings {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.tf-notification-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 19px 20px;
+    border: 1px solid #E7EBE5;
+    border-radius: 12px;
+    background: #FAFCF9;
+    transition: all 0.2s ease;
+}
+
+.tf-notification-item:hover {
+    border-color: #C9DCCB;
+    background: #F5F9F4;
+}
+
+.tf-notification-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.tf-notification-item h3 {
+    color: #34483B;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.tf-notification-item p {
+    color: #929B94;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Custom Toggle Switch */
+
+.tf-notification-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 43px;
+    height: 24px;
+    min-width: 43px;
+    margin: 0;
+    border: 1px solid #D5DED5;
+    border-radius: 30px;
+    background: #E5EAE4;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.tf-notification-item input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease;
+}
+
+.tf-notification-item input[type="checkbox"]:checked {
+    background: #527966;
+    border-color: #527966;
+}
+
+.tf-notification-item input[type="checkbox"]:checked::before {
+    transform: translateX(19px);
+}
+
+.tf-notification-item input[type="checkbox"]:focus-visible {
+    outline: 3px solid rgba(82, 121, 102, 0.2);
+    outline-offset: 3px;
+}
+
+/* Save Preferences */
+
+.tf-notification-settings .tf-settings-save-btn {
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+/* Appearance Settings */
+
+.tf-appearance-settings {
+    margin-top: 27px;
+}
+
+.tf-appearance-title {
+    margin-bottom: 20px;
+}
+
+.tf-appearance-title h3 {
+    color: #263C32;
+    font-size: 15px;
+    margin: 0 0 7px;
+}
+
+.tf-appearance-title p {
+    color: #929B94;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Theme Options */
+
+.tf-theme-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.tf-theme-option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 13px;
+    border: 1px solid #E7EBE5;
+    border-radius: 13px;
+    background: #FFFFFF;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tf-theme-option:hover {
+    border-color: #A9C5AE;
+    transform: translateY(-2px);
+}
+
+.tf-theme-option.active {
+    border: 2px solid #527966;
+    padding: 12px;
+    background: #F7FAF6;
+    box-shadow: 0 5px 18px rgba(82, 121, 102, 0.08);
+}
+
+/* Theme Preview */
+
+.tf-theme-preview {
+    height: 145px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #E7EBE5;
+}
+
+.tf-preview-sidebar {
+    width: 24%;
+    flex-shrink: 0;
+}
+
+.tf-preview-content {
+    flex: 1;
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tf-preview-content div {
+    height: 25px;
+    border-radius: 5px;
+}
+
+/* Light Preview */
+
+.light-preview {
+    background: #F5F5EF;
+}
+
+.light-preview .tf-preview-sidebar {
+    background: #FFFFFF;
+    border-right: 1px solid #E7EBE5;
+}
+
+.light-preview .tf-preview-content div {
+    background: #FFFFFF;
+    border: 1px solid #E7EBE5;
+}
+
+.light-preview .tf-preview-content div:first-child {
+    background: #DDEADF;
+}
+
+/* Dark Preview */
+
+.dark-preview {
+    background: #18231D;
+    border-color: #34483B;
+}
+
+.dark-preview .tf-preview-sidebar {
+    background: #202D25;
+    border-right: 1px solid #34483B;
+}
+
+.dark-preview .tf-preview-content div {
+    background: #29382F;
+    border: 1px solid #3A4B40;
+}
+
+.dark-preview .tf-preview-content div:first-child {
+    background: #527966;
+}
+
+/* Theme Information */
+
+.tf-theme-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tf-theme-option-info span {
+    color: #34483B;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tf-theme-option-info small {
+    color: #929B94;
+    font-size: 11px;
+}
+
+.tf-theme-radio {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #DCE5DC;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tf-theme-option.active .tf-theme-radio {
+    background: #527966;
+    border-color: #527966;
+}
+
+/* Save Button */
+
+.tf-appearance-settings .tf-settings-save-btn {
+    margin-top: 3px;
+}
+
+/* ================= Account Management ================= */
+
+.tf-account-info {
+    margin-top: 25px;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.tf-account-info-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tf-account-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.tf-account-info-header h3 {
+    margin: 0 0 5px;
+    color: var(--text-primary);
+}
+
+.tf-account-info-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.tf-account-status {
+    margin-left: auto;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #e5f5eb;
+    color: #287a49;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tf-account-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 25px 0;
+}
+
+.tf-account-info-title {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.tf-account-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tf-account-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.tf-account-info-item label {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.tf-account-info-item strong {
+    color: var(--text-primary);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.tf-account-id {
+    font-size: 12px !important;
+}
+
+.tf-account-verified {
+    color: #26965c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tf-account-unverified {
+    color: #d18a28;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Account Signout */
+
+.tf-account-logout {
+    margin-top: 25px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.tf-account-logout h3 {
+    margin: 0 0 6px;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.tf-account-logout p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.tf-account-logout button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #dc5555;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tf-account-logout button:hover {
+    background: #c63e3e;
+}
+
+/* ================= Delete Account ================= */
+
+.tf-account-delete {
+    margin-top: 18px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    background: #FFF8F6;
+    border: 1px solid #F0DAD5;
+    border-radius: 16px;
+}
+
+.tf-account-delete h3 {
+    margin: 0 0 7px;
+    color: #A63F3F;
+    font-size: 16px;
+}
+
+.tf-account-delete p {
+    margin: 0;
+    color: #927C78;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.tf-account-delete button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 11px 17px;
+    border: 1px solid #DC5555;
+    border-radius: 9px;
+    background: #DC5555;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tf-account-delete button:hover {
+    background: #C63E3E;
+    border-color: #C63E3E;
+    transform: translateY(-1px);
+}
+
+/* ================= Delete Modal ================= */
+
+.tf-delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 25, 19, 0.65);
+    backdrop-filter: blur(5px);
+}
+
+.tf-delete-modal {
+    width: 100%;
+    max-width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #E7EBE5;
+    border-radius: 18px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+    animation: tfDeleteModalIn 0.25s ease;
+}
+
+.tf-delete-modal-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    background: #FFF0ED;
+    color: #DC5555;
+    font-size: 23px;
+}
+
+.tf-delete-modal h2 {
+    margin: 0 0 12px;
+    color: #263C32;
+    font-size: 21px;
+}
+
+.tf-delete-warning {
+    margin: 0 0 22px;
+    color: #78847C;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Password Field */
+
+.tf-delete-password-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.tf-delete-password-field label {
+    color: #52665A;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tf-delete-password-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 13px;
+    border: 1px solid #DCE5DC;
+    border-radius: 9px;
+    outline: none;
+    background: #FAFCF9;
+    color: #34483B;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.tf-delete-password-field input:focus {
+    border-color: #527966;
+    box-shadow: 0 0 0 3px rgba(82, 121, 102, 0.1);
+}
+
+/* Confirmation Checkbox */
+
+.tf-delete-confirm-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    color: #78847C;
+    font-size: 12px;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.tf-delete-confirm-checkbox input {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: #DC5555;
+    cursor: pointer;
+}
+
+/* Modal Actions */
+
+.tf-delete-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 27px;
+}
+
+.tf-delete-modal-actions button {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 15px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tf-delete-cancel-btn {
+    border: 1px solid #DCE5DC;
+    background: #FFFFFF;
+    color: #52665A;
+}
+
+.tf-delete-cancel-btn:hover {
+    background: #F5F8F4;
+}
+
+.tf-delete-confirm-btn {
+    border: 1px solid #DC5555;
+    background: #DC5555;
+    color: #FFFFFF;
+}
+
+.tf-delete-confirm-btn:hover:not(:disabled) {
+    background: #C63E3E;
+}
+
+.tf-delete-confirm-btn:disabled,
+.tf-delete-cancel-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+@media (max-width: 750px) {
+    .tf-settings-page {
+        padding: 35px 16px;
+    }
+
+    .tf-settings-heading h1 {
+        font-size: 28px;
+    }
+
+    .tf-settings-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tf-settings-sidebar {
+        padding: 17px 12px;
+    }
+
+    .tf-settings-sidebar h3 {
+        margin-bottom: 12px;
+    }
+
+    .tf-settings-nav {
+        padding: 10px;
+    }
+
+    .tf-settings-content {
+        padding: 22px 18px;
+        min-height: 300px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-settings-nav {
+        transition: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .tf-settings-password-form {
+        max-width: 100%;
+    }
+
+    .tf-settings-save-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 600px) {
+    .tf-notification-item {
+        padding: 16px 14px;
+        gap: 12px;
+    }
+
+    .tf-notification-item h3 {
+        font-size: 12px;
+    }
+
+    .tf-notification-item p {
+        font-size: 10px;
+    }
+
+    .tf-notification-settings .tf-settings-save-btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-notification-item,
+    .tf-notification-item input[type="checkbox"],
+    .tf-notification-item input[type="checkbox"]::before {
+        transition: none;
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .tf-theme-options {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .tf-theme-preview {
+        height: 125px;
+    }
+
+    .tf-appearance-settings .tf-settings-save-btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-theme-option {
+        transition: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .tf-account-info {
+        padding: 18px;
+    }
+
+    .tf-account-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tf-account-status {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .tf-account-logout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@keyframes tfDeleteModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 600px) {
+    .tf-account-delete {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tf-account-delete button {
+        width: 100%;
+    }
+
+    .tf-delete-modal {
+        padding: 23px 19px;
+    }
+
+    .tf-delete-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .tf-delete-modal-actions button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-delete-modal {
+        animation: none;
+    }
+
+    .tf-account-delete button {
+        transition: none;
+    }
+}
+
+/* Tablet Responsiveness Settings Page */
+
+@media (min-width: 751px) and (max-width: 1100px) {
+
+    .tf-settings-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .tf-settings-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .tf-settings-sidebar h3 {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+    }
+
+    .tf-settings-nav {
+        margin-bottom: 0;
+    }
+
+    .tf-settings-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tf-settings-password-form {
+        max-width: 100%;
+    }
+}
+
+/* ==================== Settings Page - Dark Mode ==================== */
+
+/* Main Page */
+
+:root[data-theme="dark"] .tf-settings-page {
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-heading > span {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-settings-heading h1 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-heading p {
+    color: var(--text-secondary);
+}
+
+/* SideBar And Content */
+
+:root[data-theme="dark"] .tf-settings-sidebar,
+:root[data-theme="dark"] .tf-settings-content {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="dark"] .tf-settings-sidebar h3 {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-nav {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-nav:hover {
+    background: var(--surface-soft);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-nav.active {
+    background: #29382F;
+    border-color: #405B49;
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-settings-nav-icon {
+    background: var(--surface-soft);
+}
+
+:root[data-theme="dark"] .tf-settings-nav.active .tf-settings-nav-icon {
+    background: #344B3C;
+}
+
+/* Section Headings */
+
+:root[data-theme="dark"] .tf-settings-section-heading {
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-settings-section-heading > span {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-settings-section-heading h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-section-heading p {
+    color: var(--text-secondary);
+}
+
+/* PlaceHolder */
+
+:root[data-theme="dark"] .tf-settings-placeholder {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+/* Success And Error Messages */
+
+:root[data-theme="dark"] .tf-settings-message.success {
+    background: #294436;
+    border-color: #3D624B;
+    color: #83C99D;
+}
+
+:root[data-theme="dark"] .tf-settings-message.error {
+    background: #492E2D;
+    border-color: #68413D;
+    color: #E58A82;
+}
+
+/* Password Form */
+
+:root[data-theme="dark"] .tf-settings-password-title h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-title p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-field label {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-input {
+    background: var(--background);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-settings-password-input:focus-within {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 185, 154, 0.12);
+}
+
+:root[data-theme="dark"] .tf-settings-password-input input {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-input input::placeholder {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-input button {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-settings-password-hint {
+    color: var(--text-secondary);
+}
+
+/* Save Buttons */
+
+:root[data-theme="dark"] .tf-settings-save-btn {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+}
+
+:root[data-theme="dark"] .tf-settings-save-btn:hover:not(:disabled) {
+    background: #A9D5B5;
+    border-color: #A9D5B5;
+}
+
+/* Notification Preferences */
+
+:root[data-theme="dark"] .tf-notification-item {
+    background: var(--surface-soft);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-notification-item:hover {
+    background: #29382F;
+    border-color: #526D59;
+}
+
+:root[data-theme="dark"] .tf-notification-item h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-notification-item p {
+    color: var(--text-secondary);
+}
+
+/* Notification Toggle */
+
+:root[data-theme="dark"] .tf-notification-item input[type="checkbox"] {
+    background: #35443A;
+    border-color: #526054;
+}
+
+:root[data-theme="dark"] .tf-notification-item input[type="checkbox"]:checked {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-notification-item input[type="checkbox"]:focus-visible {
+    outline-color: rgba(139, 185, 154, 0.35);
+}
+
+/* Appearance Settings */
+
+:root[data-theme="dark"] .tf-appearance-title h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-appearance-title p {
+    color: var(--text-secondary);
+}
+
+/* Theme Options */
+
+:root[data-theme="dark"] .tf-theme-option {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-theme-option:hover {
+    border-color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-theme-option.active {
+    background: #29382F;
+    border-color: var(--primary);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .tf-theme-option-info span {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-theme-option-info small {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-theme-radio {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-theme-option.active .tf-theme-radio {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+}
+
+/* Keep The Light And Dark Theme Previews Distinct */
+
+:root[data-theme="dark"] .light-preview {
+    background: #F5F5EF;
+}
+
+:root[data-theme="dark"] .light-preview .tf-preview-sidebar {
+    background: #FFFFFF;
+}
+
+:root[data-theme="dark"] .light-preview .tf-preview-content div {
+    background: #FFFFFF;
+    border-color: #E7EBE5;
+}
+
+:root[data-theme="dark"] .light-preview .tf-preview-content div:first-child {
+    background: #DDEADF;
+}
+
+:root[data-theme="dark"] .dark-preview {
+    background: #18231D;
+    border-color: #34483B;
+}
+
+:root[data-theme="dark"] .dark-preview .tf-preview-sidebar {
+    background: #202D25;
+    border-color: #34483B;
+}
+
+:root[data-theme="dark"] .dark-preview .tf-preview-content div {
+    background: #29382F;
+    border-color: #3A4B40;
+}
+
+:root[data-theme="dark"] .dark-preview .tf-preview-content div:first-child {
+    background: #527966;
+}
+
+/* Dark Mode */
+
+:root[data-theme="dark"] .tf-account-status {
+    background: rgba(38, 150, 92, 0.16);
+    color: #72d69b;
+}
+
+/* ================= Dark Mode ================= */
+
+:root[data-theme="dark"] .tf-account-delete {
+    background: #392A29;
+    border-color: #62413D;
+}
+
+:root[data-theme="dark"] .tf-account-delete h3 {
+    color: #F08C83;
+}
+
+:root[data-theme="dark"] .tf-account-delete p {
+    color: #C5A5A0;
+}
+
+:root[data-theme="dark"] .tf-delete-modal {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-delete-modal-icon {
+    background: #492E2D;
+    color: #F08C83;
+}
+
+:root[data-theme="dark"] .tf-delete-modal h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-delete-warning {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-delete-password-field label {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-delete-password-field input {
+    background: var(--background);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-delete-password-field input:focus {
+    border-color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-delete-confirm-checkbox {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-delete-cancel-btn {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-delete-cancel-btn:hover {
+    background: #34443A;
+}

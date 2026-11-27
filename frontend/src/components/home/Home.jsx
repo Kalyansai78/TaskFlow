@@ -18,14 +18,14 @@ const Home = () => {
     return (
         <main className="tf-home">
 
-            {/* HERO SECTION */}
+            {/* Hero Section */}
             <section className="tf-home-hero">
 
                 <div className="tf-home-container">
 
                     <div className="tf-home-hero-grid">
 
-                        {/* HERO CONTENT */}
+                        {/* Hero Content */}
                         <div className="tf-home-content">
 
                             <div className="tf-home-label">
@@ -47,7 +47,7 @@ const Home = () => {
                             <div className="tf-home-actions">
 
                                 <Link
-                                    to={isLoggedIn ? "/todo" : "/signup"}
+                                    to={isLoggedIn ? "/dashboard" : "/signup"}
                                     className="tf-home-primary"
                                 >
                                     {isLoggedIn ? "Go to dashboard" : "Get started"}
@@ -71,7 +71,7 @@ const Home = () => {
 
                         </div>
 
-                        {/* DASHBOARD PREVIEW */}
+                        {/* Dashboard Preview */}
                         <div className="tf-home-visual">
 
                             <div className="tf-home-decoration tf-decoration-one"></div>
@@ -177,7 +177,7 @@ const Home = () => {
 
             </section>
 
-            {/* FEATURES SECTION */}
+            {/* Features Section */}
             <section className="tf-home-features">
 
                 <div className="tf-home-container">
@@ -237,7 +237,7 @@ const Home = () => {
 
             </section>
 
-            {/* FINAL CTA */}
+            {/* Final CTA */}
             <section className="tf-home-cta">
 
                 <div className="tf-home-container">
@@ -253,7 +253,7 @@ const Home = () => {
                         </p>
 
                         <Link
-                            to={isLoggedIn ? "/todo" : "/signup"}
+                            to={isLoggedIn ? "/dashboard" : "/signup"}
                             className="tf-home-primary tf-cta-button"
                         >
                             {isLoggedIn ? "Open dashboard" : "Start your journey"}

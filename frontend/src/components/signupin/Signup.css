@@ -1,5 +1,3 @@
-/* AUTHENTICATION PAGE */
-
 .tf-auth-page {
     min-height: calc(100vh - 78px);
     padding: 45px 30px;
@@ -26,7 +24,7 @@
     animation: tfAuthAppear 0.6s ease both;
 }
 
-/* LEFT BRAND PANEL */
+/* Left Hand Panel */
 
 .tf-auth-aside {
     position: relative;
@@ -176,7 +174,7 @@
     letter-spacing: 0.5px;
 }
 
-/* FORM SECTION */
+/* Form Section */
 
 .tf-auth-form-section {
     display: flex;
@@ -221,7 +219,7 @@
     line-height: 1.7;
 }
 
-/* FORM INPUTS */
+/* Form Inputs */
 
 .tf-auth-form {
     display: flex;
@@ -276,7 +274,7 @@
     color: #adb7ae;
 }
 
-/* SUBMIT BUTTON */
+/* Submit Button */
 
 .tf-auth-submit {
     min-height: 49px;
@@ -311,7 +309,7 @@
     opacity: 0.7;
 }
 
-/* FOOTER */
+/* Footer */
 
 .tf-auth-switch {
     margin-top: 25px;
@@ -340,7 +338,7 @@
     text-align: center;
 }
 
-/* ANIMATIONS */
+/* Animations */
 
 @keyframes tfAuthAppear {
     from {
@@ -364,7 +362,7 @@
     }
 }
 
-/* RESPONSIVE */
+/* Responsive */
 
 @media (max-width: 900px) {
     .tf-auth-page {
@@ -437,5 +435,380 @@
     .tf-auth-page *::before,
     .tf-auth-page *::after {
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* OTP Verification Input */
+
+.tf-otp-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 12px 0 24px;
+    width: 100%;
+}
+
+.tf-otp-input {
+    width: 48px;
+    height: 54px;
+    border: 1px solid #dce5df;
+    border-radius: 12px;
+    background: #f8faf8;
+    color: #527b65;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.tf-otp-input:focus {
+    border-color: #527b65;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(82, 123, 101, 0.12);
+}
+
+@media (max-width: 400px) {
+    .tf-otp-container {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .tf-otp-input {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        height: 48px;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 400px) {
+    .tf-auth-layout,
+    .tf-auth-form-section,
+    .tf-auth-form-wrapper,
+    .tf-auth-form,
+    .tf-auth-input-wrap {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tf-auth-input-wrap {
+        width: 100%;
+    }
+
+    .tf-auth-submit {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tf-auth-heading p {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Password Visibility Toggle */
+
+.tf-password-toggle {
+    border: none;
+    background: transparent;
+    color: #89968d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.tf-password-toggle:hover {
+    color: #527b65;
+}
+
+.tf-password-toggle:focus-visible {
+    outline: 2px solid #527b65;
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+.tf-password-match {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: -14px;
+    margin-bottom: 18px;
+}
+
+.tf-password-match.success {
+    color: #27834b;
+    background: #e0f5e8;
+}
+
+.tf-password-match.error {
+    color: #c74747;
+    background: #fde8e8;
+}
+
+/* Resend OTP */
+
+.tf-resend-section {
+    margin-top: -12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tf-resend-section p {
+    margin: 0;
+    color: #89958b;
+    font-size: 11px;
+}
+
+.tf-resend-section span {
+    color: #527966;
+    font-weight: 700;
+}
+
+.tf-resend-section button {
+    border: none;
+    background: transparent;
+    color: #527966;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.tf-resend-section button:hover:not(:disabled) {
+    color: #304d3d;
+    text-decoration: underline;
+}
+
+.tf-resend-section button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Forgot Password Link */
+
+.tf-forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    margin-bottom: 8px;
+}
+
+.tf-forgot-password a {
+    color: #527966;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tf-forgot-password a:hover {
+    color: #304d3d;
+    text-decoration: underline;
+}
+
+.tf-auth-input-wrap input[readonly] {
+    cursor: not-allowed;
+    background-color: #f1f3f2;
+    color: #777;
+}
+
+.tf-auth-input-wrap input[readonly]:hover {
+    cursor: not-allowed;
+}
+
+.tf-password-input-wrap {
+    position: relative;
+}
+
+.tf-password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #87968b;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.tf-password-toggle:hover {
+    color: #527966;
+}
+
+.tf-password-toggle:focus-visible {
+    outline: 2px solid #527966;
+    outline-offset: 2px;
+    border-radius: 5px;
+}
+
+/* ==================== Auth Pages Dark Mode ==================== */
+
+:root[data-theme="dark"] .tf-auth-page {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(100, 145, 112, 0.12), transparent 30%),
+        var(--background);
+}
+
+:root[data-theme="dark"] .tf-auth-layout {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+:root[data-theme="dark"] .tf-auth-form-section {
+    background: var(--surface);
+}
+
+:root[data-theme="dark"] .tf-auth-mobile-brand {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-auth-heading > span {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-auth-heading h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-auth-heading p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-auth-form label {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-auth-input-wrap {
+    background: var(--background);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-auth-input-wrap:focus-within {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(139, 185, 154, 0.12);
+}
+
+:root[data-theme="dark"] .tf-auth-input-wrap input {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-auth-input-wrap input::placeholder {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-auth-input-wrap input[readonly] {
+    background: var(--surface-soft);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-password-toggle {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-password-toggle:hover {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-password-toggle:focus-visible {
+    outline-color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-auth-submit {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .tf-auth-submit:hover:not(:disabled) {
+    background: #A9D5B5;
+    border-color: #A9D5B5;
+}
+
+:root[data-theme="dark"] .tf-forgot-password a,
+:root[data-theme="dark"] .tf-auth-switch a {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-forgot-password a:hover,
+:root[data-theme="dark"] .tf-auth-switch a:hover {
+    color: #A9D5B5;
+}
+
+:root[data-theme="dark"] .tf-auth-switch {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-auth-bottom-note {
+    border-top-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-otp-input {
+    background: var(--background);
+    border-color: var(--border);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-otp-input:focus {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 185, 154, 0.12);
+}
+
+:root[data-theme="dark"] .tf-password-match.success {
+    background: #294436;
+    color: #83C99D;
+}
+
+:root[data-theme="dark"] .tf-password-match.error {
+    background: #492E2D;
+    color: #E58A82;
+}
+
+:root[data-theme="dark"] .tf-resend-section p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-resend-section span,
+:root[data-theme="dark"] .tf-resend-section button {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-resend-section button:hover:not(:disabled) {
+    color: #A9D5B5;
+}
+
+:root[data-theme="dark"] .tf-auth-aside {
+    background:
+        radial-gradient(circle at 90% 15%, rgba(255,255,255,0.16), transparent 35%),
+        linear-gradient(145deg, #3F604B, #263E31);
+}
+
+@media (max-width: 650px) {
+    :root[data-theme="dark"] .tf-auth-mobile-brand .tf-auth-aside-logo {
+        background: var(--primary);
+        color: #17231B;
     }
 }

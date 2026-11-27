@@ -1,35 +1,49 @@
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: "http://localhost:1000/api/v2"
-});
+const API_ROOT =
+    import.meta.env.VITE_API_URL || "http://localhost:1000";
 
-// Automatically attach JWT
-api.interceptors.request.use(
-    (config) => {
-        const token = sessionStorage.getItem("token");
+const createApi = (version) => {
+    const instance = axios.create({
+        baseURL: `${API_ROOT}/api/${version}`
+    });
 
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
+    instance.interceptors.request.use(
+        (config) => {
+            const token = sessionStorage.getItem("token");
+
+            if (token) {
+                config.headers.Authorization = `Bearer ${token}`;
+            }
+
+            return config;
+        },
+        (error) => Promise.reject(error)
+    );
+
+    instance.interceptors.response.use(
+        (response) => response,
+        (error) => {
+            const isSigninRequest = error.config?.url?.includes("/signin");
+
+            if (error.response?.status === 401 && !isSigninRequest) {
+                sessionStorage.removeItem("token");
+                sessionStorage.removeItem("id");
+                sessionStorage.removeItem("username");
+                sessionStorage.removeItem("email");
+
+                window.location.assign("/signin");
+            }
+
+            return Promise.reject(error);
         }
+    );
 
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
+    return instance;
+};
 
-// Handle expired or invalid JWT
-api.interceptors.response.use(
-    (response) => response,
-    (error) => {
-        if (error.response?.status === 401) {
-            sessionStorage.clear();
+export const apiV1 = createApi("v1");
+export const apiV2 = createApi("v2");
+export const apiV3 = createApi("v3");
 
-            window.location.assign("/signin");
-        }
-
-        return Promise.reject(error);
-    }
-);
-
-export default api;
+export default apiV2;

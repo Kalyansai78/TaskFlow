@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./Signup.css";
 import Heading from "./Heading";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { apiV1 } from "../../api/axios";
 import { ToastContainer, toast } from "react-toastify";
 import {
     FiMail,
     FiUser,
     FiLock,
-    FiArrowRight
+    FiArrowRight,
+    FiEye,
+    FiEyeOff
 } from "react-icons/fi";
 
 const Signup = () => {
@@ -21,6 +23,11 @@ const Signup = () => {
     });
 
     const [loading, setLoading] = useState(false);
+
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const change = (e) => {
         const { name, value } = e.target;
@@ -43,11 +50,20 @@ const Signup = () => {
             return;
         }
 
+        if (inputs.password.length < 6) {
+            toast.error("Password must be at least 6 characters.");
+            return;
+        }
+
+        if (inputs.password !== confirmPassword) {
+            toast.error("Passwords do not match.");
+            return;
+        }
+
         try {
             setLoading(true);
 
-            const response = await axios.post(
-                "http://localhost:1000/api/v1/register",
+            const response = await apiV1.post("/register",
                 {
                     email: inputs.email.trim(),
                     username: inputs.username.trim(),
@@ -63,9 +79,16 @@ const Signup = () => {
                 email: "",
                 username: "",
                 password: "",
+                
             });
 
-            navigate("/signin");
+            setConfirmPassword("");
+            setShowPassword(false);
+            setShowConfirmPassword(false);
+
+            navigate("/verify-email", {
+                state: { email: response.data.email }
+            });
 
         } catch (error) {
             console.error(
@@ -155,14 +178,15 @@ const Signup = () => {
                                     required
                                 />
                             </div>
-
+                            
                             <label htmlFor="signup-password">Password</label>
 
                             <div className="tf-auth-input-wrap">
                                 <FiLock />
+
                                 <input
                                     id="signup-password"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder="Create a password"
                                     autoComplete="new-password"
@@ -170,7 +194,61 @@ const Signup = () => {
                                     onChange={change}
                                     required
                                 />
+
+                                <button
+                                    type="button"
+                                    className="tf-password-toggle"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    aria-label={showPassword ? "Hide password" : "Show password"}
+                                >
+                                    {showPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
                             </div>
+
+                            <label htmlFor="confirm-password">Confirm password</label>
+
+                            <div className="tf-auth-input-wrap">
+                                <FiLock />
+
+                                <input
+                                    id="confirm-password"
+                                    type={showConfirmPassword ? "text" : "password"}
+                                    placeholder="Re-enter your password"
+                                    autoComplete="new-password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    required
+                                />
+
+                                <button
+                                    type="button"
+                                    className="tf-password-toggle"
+                                    onClick={() =>
+                                        setShowConfirmPassword(!showConfirmPassword)
+                                    }
+                                    aria-label={
+                                        showConfirmPassword
+                                            ? "Hide confirm password"
+                                            : "Show confirm password"
+                                    }
+                                >
+                                    {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
+                            </div>
+
+                            {confirmPassword && (
+                                <div
+                                    className={
+                                        inputs.password === confirmPassword
+                                            ? "tf-password-match success"
+                                            : "tf-password-match error"
+                                    }
+                                >
+                                    {inputs.password === confirmPassword
+                                        ? "✓ Passwords match"
+                                        : "✕ Passwords do not match"}
+                                </div>
+                            )}
 
                             <button
                                 className="tf-auth-submit"

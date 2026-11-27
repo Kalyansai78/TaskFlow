@@ -1,0 +1,282 @@
+.tf-subtask-editor {
+    width: 100%;
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid #e7ede5;
+    border-radius: 14px;
+    background: #fafcf9;
+}
+
+.tf-subtask-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 13px;
+}
+
+.tf-subtask-heading p {
+    margin: 4px 0 0;
+    color: #87948a;
+    font-size: 11px;
+}
+
+.tf-subtask-count {
+    color: #527966;
+    background: #edf4ee;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tf-subtask-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 13px;
+}
+
+.tf-subtask-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 12px;
+    background: #f8faf6;
+    border: 1px solid #edf0e9;
+    border-radius: 10px;
+    min-height: 49px;
+    transition: all 0.2s ease;
+}
+
+.tf-subtask-item span {
+    flex: 1;
+    color: #46594b;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.tf-subtask-completed span {
+    color: #98a49b;
+    text-decoration: line-through;
+}
+
+.tf-subtask-check {
+    color: #648b70;
+    font-size: 16px;
+}
+
+.tf-subtask-delete {
+    color: #a2aaa3;
+    font-size: 13px;
+}
+
+.tf-subtask-delete:hover {
+    color: #c45c50;
+}
+
+.tf-subtask-add {
+    display: flex;
+    gap: 9px;
+}
+
+.tf-subtask-add input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 13px;
+    border: 1px solid #e5ebe3;
+    border-radius: 9px;
+    outline: none;
+    font-size: 12px;
+}
+
+.tf-subtask-add input:focus {
+    border-color: #8eae96;
+}
+
+.tf-subtask-add button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 9px;
+    background: #527966;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tf-subtask-add button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Subtask Editor Dark Mode */
+
+:root[data-theme="dark"] .tf-subtask-editor {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-subtask-heading p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-subtask-count {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+/* Checklist Items */
+
+:root[data-theme="dark"] .tf-subtask-item {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-subtask-item span {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-subtask-completed span {
+    color: var(--text-secondary);
+}
+
+/* Complete Button */
+
+:root[data-theme="dark"] .tf-subtask-check {
+    color: var(--primary);
+}
+
+/* Delete Button */
+
+:root[data-theme="dark"] .tf-subtask-delete {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-subtask-delete:hover {
+    background: #492E2D;
+    color: #E58A82;
+}
+
+/* Add Checklist Input */
+
+:root[data-theme="dark"] .tf-subtask-add input {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-subtask-add input::placeholder {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-subtask-add input:focus {
+    border-color: var(--primary);
+    outline-color: var(--primary);
+}
+
+/* Add Button */
+
+:root[data-theme="dark"] .tf-subtask-add button {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+}
+
+:root[data-theme="dark"] .tf-subtask-add button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Subtask Editor UI Improvements */
+
+.tf-subtask-item:hover {
+    border-color: #c8d9c9;
+    background: #f2f7f1;
+}
+
+.tf-subtask-check,
+.tf-subtask-delete {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.tf-subtask-check:hover {
+    background: #e8f1e8;
+    transform: scale(1.08);
+}
+
+.tf-subtask-delete:hover {
+    background: #fff0ef;
+}
+
+.tf-subtask-add input {
+    min-height: 48px;
+    border-radius: 11px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.tf-subtask-add input:focus {
+    box-shadow: 0 0 0 3px rgba(82, 121, 102, 0.08);
+}
+
+.tf-subtask-add button {
+    min-width: 88px;
+    min-height: 48px;
+    border-radius: 11px;
+    transition: all 0.2s ease;
+}
+
+.tf-subtask-add button:hover:not(:disabled) {
+    background: #3f6350;
+    transform: translateY(-1px);
+}
+
+/* Dark Mode Improvements */
+
+:root[data-theme="dark"] .tf-subtask-editor {
+    background: var(--surface-soft);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-subtask-item:hover {
+    background: var(--surface);
+    border-color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-subtask-check:hover {
+    background: #344b3c;
+}
+
+:root[data-theme="dark"] .tf-subtask-add input {
+    border-radius: 11px;
+}
+
+@media (max-width: 480px) {
+    .tf-subtask-editor {
+        padding: 14px;
+    }
+
+    .tf-subtask-add {
+        gap: 7px;
+    }
+
+    .tf-subtask-add button {
+        min-width: 75px;
+        padding: 0 10px;
+    }
+}

@@ -15,7 +15,7 @@
     margin: 0 auto;
 }
 
-/* HERO */
+/* Hero */
 
 .tf-about-hero {
     padding: 90px 0;
@@ -106,7 +106,7 @@
     font-size: 17px;
 }
 
-/* HERO VISUAL */
+/* Hero Visual */
 
 .tf-about-hero-visual {
     position: relative;
@@ -230,7 +230,7 @@
     font-size: 9px;
 }
 
-/* MISSION */
+/* Mission */
 
 .tf-about-mission {
     padding: 78px 0;
@@ -278,7 +278,7 @@
     margin-bottom: 0;
 }
 
-/* FEATURES */
+/* Features */
 
 .tf-about-features {
     padding: 85px 0 95px;
@@ -371,7 +371,7 @@
     line-height: 1.9;
 }
 
-/* VALUES */
+/* Values */
 
 .tf-about-values {
     padding: 85px 0;
@@ -443,7 +443,7 @@
     font-size: 15px;
 }
 
-/* CTA */
+/* Cta */
 
 .tf-about-cta {
     padding: 78px 0;
@@ -479,7 +479,12 @@
     margin-top: 25px;
 }
 
-/* ANIMATIONS */
+.tf-about-primary:focus-visible {
+    outline: 3px solid #8cab8c;
+    outline-offset: 4px;
+}
+
+/* Animations */
 
 @keyframes tfAboutFadeUp {
     from {
@@ -512,7 +517,7 @@
     }
 }
 
-/* RESPONSIVE */
+/* Responsive */
 
 @media (max-width: 1000px) {
     .tf-about-feature-grid {
@@ -651,4 +656,170 @@
         animation: none !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* ==================== About Page - Dark Mode ==================== */
+
+:root[data-theme="dark"] .tf-about {
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+/* Hero */
+
+:root[data-theme="dark"] .tf-about-hero {
+    background:
+        radial-gradient(circle at 85% 40%, rgba(100, 145, 112, 0.12), transparent 30%),
+        var(--background);
+}
+
+:root[data-theme="dark"] .tf-about-hero-content h1,
+:root[data-theme="dark"] .tf-about-mission-heading h2,
+:root[data-theme="dark"] .tf-about-section-heading h2,
+:root[data-theme="dark"] .tf-about-values-content h2,
+:root[data-theme="dark"] .tf-about-cta h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-about-hero-content h1 span,
+:root[data-theme="dark"] .tf-about-mission-heading h2 span {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-about-eyebrow {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-about-hero-content > p,
+:root[data-theme="dark"] .tf-about-mission-copy p,
+:root[data-theme="dark"] .tf-about-section-heading p,
+:root[data-theme="dark"] .tf-about-values-content > p,
+:root[data-theme="dark"] .tf-about-cta p {
+    color: var(--text-secondary);
+}
+
+/* Hero Visual */
+
+:root[data-theme="dark"] .tf-about-circle-one {
+    background: #293C30;
+}
+
+:root[data-theme="dark"] .tf-about-circle-two {
+    border-color: rgba(139, 185, 154, 0.2);
+}
+
+:root[data-theme="dark"] .tf-about-quote-card,
+:root[data-theme="dark"] .tf-about-floating {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+:root[data-theme="dark"] .tf-about-quote-icon,
+:root[data-theme="dark"] .tf-about-values-icon {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-about-quote-card h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-about-quote-card p,
+:root[data-theme="dark"] .tf-about-floating span {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-about-quote-card > span,
+:root[data-theme="dark"] .tf-about-floating > svg,
+:root[data-theme="dark"] .tf-about-floating strong {
+    color: var(--primary);
+}
+
+/* Mission */
+
+:root[data-theme="dark"] .tf-about-mission,
+:root[data-theme="dark"] .tf-about-values {
+    background: var(--surface);
+}
+
+/* Section Labels */
+
+:root[data-theme="dark"] .tf-about-mission-heading > span,
+:root[data-theme="dark"] .tf-about-section-heading > span,
+:root[data-theme="dark"] .tf-about-values-content > span,
+:root[data-theme="dark"] .tf-about-cta > .tf-about-container > span {
+    color: var(--primary);
+}
+
+/* Features */
+
+:root[data-theme="dark"] .tf-about-features {
+    background: var(--background);
+}
+
+:root[data-theme="dark"] .tf-about-feature-card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .tf-about-feature-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+:root[data-theme="dark"] .tf-about-feature-card h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-about-feature-card p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-about-feature-icon {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-about-feature-card:nth-child(2) .tf-about-feature-icon {
+    background: #493B2C;
+    color: #E5B77D;
+}
+
+:root[data-theme="dark"] .tf-about-feature-card:nth-child(3) .tf-about-feature-icon {
+    background: #293C35;
+    color: #91BDA5;
+}
+
+:root[data-theme="dark"] .tf-about-feature-card:nth-child(4) .tf-about-feature-icon {
+    background: #37314D;
+    color: #B5A5E8;
+}
+
+/* Values */
+
+:root[data-theme="dark"] .tf-about-value-points div {
+    color: var(--primary);
+}
+
+/* CTA */
+
+:root[data-theme="dark"] .tf-about-cta {
+    background: #293C30;
+}
+
+/* Button */
+
+:root[data-theme="dark"] .tf-about-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+    box-shadow: none;
+}
+
+:root[data-theme="dark"] .tf-about-primary:hover {
+    background: #A9D5B5;
+    border-color: #A9D5B5;
+    color: #17231B;
 }

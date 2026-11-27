@@ -46,7 +46,7 @@ const About = () => {
     return (
         <main className="tf-about">
 
-            {/* HERO */}
+            {/* Hero */}
             <section className="tf-about-hero">
                 <div className="tf-about-container">
 
@@ -67,7 +67,7 @@ const About = () => {
                         </p>
 
                         <Link
-                            to={isLoggedIn ? "/todo" : "/signup"}
+                            to={isLoggedIn ? "/dashboard" : "/signup"}
                             className="tf-about-primary"
                         >
                             {isLoggedIn ? "Explore dashboard" : "Get started"}
@@ -108,7 +108,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* MISSION */}
+            {/* Mission */}
             <section className="tf-about-mission">
                 <div className="tf-about-container tf-about-mission-grid">
 
@@ -138,7 +138,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* FEATURES */}
+            {/* Features */}
             <section className="tf-about-features">
                 <div className="tf-about-container">
 
@@ -172,7 +172,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* VALUES */}
+            {/* Values */}
             <section className="tf-about-values">
                 <div className="tf-about-container">
 
@@ -204,7 +204,7 @@ const About = () => {
                 </div>
             </section>
 
-            {/* FINAL CTA */}
+            {/* Final Cta */}
             <section className="tf-about-cta">
                 <div className="tf-about-container">
 
@@ -218,7 +218,7 @@ const About = () => {
                     </p>
 
                     <Link
-                        to={isLoggedIn ? "/todo" : "/signup"}
+                        to={isLoggedIn ? "/dashboard" : "/signup"}
                         className="tf-about-primary"
                     >
                         {isLoggedIn ? "Go to dashboard" : "Start your journey"}

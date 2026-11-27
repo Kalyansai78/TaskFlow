@@ -1,20 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import Heading from "./Heading";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { apiV1 } from "../../api/axios";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import {
     FiMail,
     FiLock,
-    FiArrowRight
+    FiArrowRight,
+    FiEye,
+    FiEyeOff
 } from "react-icons/fi";
 
 const Signin = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        const message = location.state?.message;
+
+        if (message) {
+            toast.success(message);
+
+            // Clear The Navigation Message So It Doesn't Appear Again
+
+            navigate(location.pathname, {
+                replace: true,
+                state: null
+            });
+        }
+    }, [location, navigate]);
 
     const [inputs, setInputs] = useState({
         email: "",
@@ -22,6 +40,7 @@ const Signin = () => {
     });
 
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const change = (e) => {
         const { name, value } = e.target;
@@ -43,8 +62,7 @@ const Signin = () => {
         try {
             setLoading(true);
 
-            const response = await axios.post(
-                "http://localhost:1000/api/v1/signin",
+            const response = await apiV1.post("/signin",
                 {
                     email: inputs.email.trim(),
                     password: inputs.password,
@@ -81,7 +99,7 @@ const Signin = () => {
 
             toast.success("Welcome back!");
 
-            navigate("/todo");
+            navigate("/dashboard");
         } catch (error) {
             const message =
                 error.response?.data?.message ||
@@ -100,7 +118,6 @@ const Signin = () => {
 
     return (
         <main className="tf-auth-page">
-            <ToastContainer position="top-right" autoClose={2500} />
 
             <div className="tf-auth-layout">
 
@@ -146,11 +163,12 @@ const Signin = () => {
 
                             <label htmlFor="signin-password">Password</label>
 
-                            <div className="tf-auth-input-wrap">
+                            <div className="tf-auth-input-wrap tf-password-input-wrap">
                                 <FiLock />
+
                                 <input
                                     id="signin-password"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder="Enter your password"
                                     autoComplete="current-password"
@@ -158,6 +176,22 @@ const Signin = () => {
                                     onChange={change}
                                     required
                                 />
+
+                                <button
+                                    type="button"
+                                    className="tf-password-toggle"
+                                    onClick={() => setShowPassword((prev) => !prev)}
+                                    aria-label={showPassword ? "Hide password" : "Show password"}
+                                    aria-pressed={showPassword}
+                                >
+                                    {showPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
+                            </div>
+
+                            <div className="tf-forgot-password">
+                                <Link to="/forgot-password">
+                                    Forgot password?
+                                </Link>
                             </div>
 
                             <button

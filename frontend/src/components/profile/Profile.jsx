@@ -6,14 +6,13 @@ import {
     FiMail,
     FiShield,
     FiCalendar,
-    FiArrowLeft,
     FiRefreshCw,
     FiEdit2,
     FiSave,
     FiX
 } from "react-icons/fi";
 
-import api from "../../api/axios";
+import { apiV1 } from "../../api/axios";
 import { authActions } from "../../store";
 import "./Profile.css";
 
@@ -35,13 +34,11 @@ const Profile = () => {
         text: ""
     });
 
-    // FETCH PROFILE
+    // Fetch Profile
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await api.get(
-                    "http://localhost:1000/api/v1/profile"
-                );
+                const response = await apiV1.get("/profile");
 
                 const user = response.data.user;
 
@@ -71,7 +68,7 @@ const Profile = () => {
         fetchProfile();
     }, [dispatch, navigate]);
 
-    // HANDLE INPUT CHANGES
+    // Handle Input Changes
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -86,7 +83,7 @@ const Profile = () => {
         });
     };
 
-    // ENABLE EDIT MODE
+    // Enable Edit Code
     const handleEdit = () => {
         setFormData({
             username: profile.username,
@@ -101,7 +98,7 @@ const Profile = () => {
         setEditing(true);
     };
 
-    // CANCEL EDITING
+    // Cancel Editing
     const handleCancel = () => {
         setFormData({
             username: profile.username,
@@ -116,7 +113,7 @@ const Profile = () => {
         });
     };
 
-    // SAVE PROFILE
+    // Save Profile
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -144,17 +141,14 @@ const Profile = () => {
         try {
             setSaving(true);
 
-            const response = await api.put(
-                "http://localhost:1000/api/v1/update-profile",
-                {
-                    username,
-                    email
-                }
-            );
+            const response = await apiV1.put("/update-profile", {
+                username,
+                email
+            });
 
             const updatedUser = response.data.user;
 
-            // Update local profile
+            // Update Local Profile
             setProfile(updatedUser);
 
             setFormData({
@@ -162,7 +156,7 @@ const Profile = () => {
                 email: updatedUser.email
             });
 
-            // Update session storage
+            // Update Session Storage
             sessionStorage.setItem(
                 "id",
                 updatedUser._id
@@ -178,7 +172,7 @@ const Profile = () => {
                 updatedUser.email
             );
 
-            // Update Redux so Navbar re-renders
+            // Update Redux So Navbar Re-Renders
             dispatch(
                 authActions.login({
                     _id: updatedUser._id,
@@ -212,7 +206,7 @@ const Profile = () => {
         }
     };
 
-    // USER INITIALS
+    // User Initials
     const initials = profile?.username
         ?.split(" ")
         .filter(Boolean)
@@ -220,7 +214,7 @@ const Profile = () => {
         .map((part) => part[0].toUpperCase())
         .join("");
 
-    // LOADING STATE
+    // Loading State
     if (loading) {
         return (
             <div className="tf-profile-page">
@@ -232,7 +226,7 @@ const Profile = () => {
         );
     }
 
-    // ERROR STATE
+    // Error State
     if (!profile) {
         return (
             <div className="tf-profile-page">
@@ -252,14 +246,6 @@ const Profile = () => {
         <main className="tf-profile-page">
             <div className="tf-profile-container">
 
-                <button
-                    className="tf-profile-back"
-                    onClick={() => navigate("/todo")}
-                >
-                    <FiArrowLeft />
-                    Back to dashboard
-                </button>
-
                 <section className="tf-profile-heading">
                     <span>ACCOUNT SETTINGS</span>
                     <h1>My Profile</h1>
@@ -272,7 +258,7 @@ const Profile = () => {
 
                     <div className="tf-profile-banner" />
 
-                    {/* USER HEADER */}
+                    {/* User Header */}
                     <div className="tf-profile-user">
 
                         <div className="tf-profile-avatar">
@@ -293,7 +279,7 @@ const Profile = () => {
 
                     <div className="tf-profile-divider" />
 
-                    {/* PERSONAL INFORMATION */}
+                    {/* Personal Information */}
                     <div className="tf-profile-section-heading">
 
                         <div>
@@ -317,7 +303,7 @@ const Profile = () => {
 
                     </div>
 
-                    {/* NOTIFICATION */}
+                    {/* Notification */}
                     {message.text && (
                         <div className={`tf-profile-message ${message.type}`}>
                             {message.text}
@@ -328,7 +314,7 @@ const Profile = () => {
 
                         <div className="tf-profile-info-grid">
 
-                            {/* USERNAME */}
+                            {/* Username */}
                             <div className="tf-profile-info-item">
 
                                 <span className="tf-profile-info-icon">
@@ -357,7 +343,7 @@ const Profile = () => {
 
                             </div>
 
-                            {/* EMAIL */}
+                            {/* Email */}
                             <div className="tf-profile-info-item">
 
                                 <span className="tf-profile-info-icon">
@@ -386,7 +372,7 @@ const Profile = () => {
 
                             </div>
 
-                            {/* ACCOUNT STATUS */}
+                            {/* Account Status */}
                             <div className="tf-profile-info-item">
 
                                 <span className="tf-profile-info-icon">
@@ -400,7 +386,7 @@ const Profile = () => {
 
                             </div>
 
-                            {/* ACCOUNT ID */}
+                            {/* Account ID */}
                             <div className="tf-profile-info-item">
 
                                 <span className="tf-profile-info-icon">
@@ -418,7 +404,7 @@ const Profile = () => {
 
                         </div>
 
-                        {/* SAVE AND CANCEL */}
+                        {/* Save And Cancel */}
                         {editing && (
                             <div className="tf-profile-form-actions">
 

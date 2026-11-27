@@ -87,7 +87,7 @@
 }
 
 .tf-profile-user-details {
-    padding-top: 32px;
+    padding-top: 45px;
     flex: 1;
     min-width: 0;
 }
@@ -230,12 +230,6 @@
     animation: tf-profile-rotate 1s linear infinite;
 }
 
-@keyframes tf-profile-rotate {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .tf-profile-error h2 {
     color: #263C32;
 }
@@ -249,46 +243,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 650px) {
-    .tf-profile-page {
-        padding: 35px 16px;
-    }
-
-    .tf-profile-heading h1 {
-        font-size: 28px;
-    }
-
-    .tf-profile-user {
-        padding: 0 20px;
-        flex-wrap: wrap;
-    }
-
-    .tf-profile-status {
-        margin: 0 0 15px 100px;
-    }
-
-    .tf-profile-divider {
-        margin: 20px;
-    }
-
-    .tf-profile-section-heading {
-        padding: 0 20px;
-    }
-
-    .tf-profile-info-grid {
-        grid-template-columns: 1fr;
-        padding: 25px 20px;
-        gap: 22px;
-    }
-
-    .tf-profile-footer {
-        padding: 18px 20px;
-        flex-direction: column;
-    }
-}
-
-
-/* PROFILE SECTION HEADING UPDATE */
+/* Profile Section Heading Update */
 
 .tf-profile-section-heading {
     display: flex;
@@ -297,7 +252,7 @@
     gap: 15px;
 }
 
-/* EDIT PROFILE BUTTON */
+/* Eedit Profile Button */
 
 .tf-profile-edit-btn {
     display: inline-flex;
@@ -323,7 +278,7 @@
     border-color: #527966;
 }
 
-/* EDITABLE FIELDS */
+/* Editable Fields */
 
 .tf-profile-field {
     display: flex;
@@ -353,7 +308,7 @@
     box-shadow: 0 0 0 3px rgba(82, 121, 102, 0.09);
 }
 
-/* NOTIFICATION */
+/* Notification */
 
 .tf-profile-message {
     margin: 22px 35px 0;
@@ -376,7 +331,7 @@
     color: #b6534c;
 }
 
-/* FORM ACTIONS */
+/* Form Actions */
 
 .tf-profile-form-actions {
     display: flex;
@@ -431,7 +386,51 @@
     cursor: not-allowed;
 }
 
-/* RESPONSIVE EDITING */
+@keyframes tf-profile-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 650px) {
+    .tf-profile-page {
+        padding: 35px 16px;
+    }
+
+    .tf-profile-heading h1 {
+        font-size: 28px;
+    }
+
+    .tf-profile-user {
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+
+    .tf-profile-status {
+        margin: 0 0 15px 100px;
+    }
+
+    .tf-profile-divider {
+        margin: 20px;
+    }
+
+    .tf-profile-section-heading {
+        padding: 0 20px;
+    }
+
+    .tf-profile-info-grid {
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
+        gap: 22px;
+    }
+
+    .tf-profile-footer {
+        padding: 18px 20px;
+        flex-direction: column;
+    }
+}
+
+/* Responsive Editing */
 
 @media (max-width: 650px) {
     .tf-profile-section-heading {
@@ -462,4 +461,271 @@
     .tf-profile-spinner {
         animation-duration: 0.01ms !important;
     }
+}
+
+/* Extra Small Mobile Profile Header */
+
+@media (max-width: 380px) {
+
+    .tf-profile-user {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        column-gap: 14px;
+        row-gap: 12px;
+        padding: 0 16px;
+        align-items: center;
+    }
+
+    .tf-profile-avatar {
+        width: 72px;
+        height: 72px;
+    }
+
+    .tf-profile-user-details h2 {
+        font-size: 19px;
+    }
+
+    .tf-profile-user-details p {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .tf-profile-status {
+        grid-column: 2;
+        justify-self: start;
+        margin: 0;
+    }
+}
+
+/* Profile Header Mobile Responsiveness */
+
+@media (max-width: 650px) {
+    .tf-profile-user {
+        display: grid;
+        grid-template-columns: 82px minmax(0, 1fr);
+        align-items: center;
+        column-gap: 18px;
+        row-gap: 12px;
+        padding: 0 20px;
+    }
+
+    .tf-profile-user-details p {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .tf-profile-status {
+        grid-column: 2;
+        justify-self: start;
+        margin: 0 0 15px;
+    }
+}
+
+/* Extra Small Mobile */
+
+@media (max-width: 380px) {
+    .tf-profile-user {
+        grid-template-columns: 72px minmax(0, 1fr);
+        column-gap: 14px;
+    }
+
+    .tf-profile-avatar {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+/* ==================== Profile Page - Dakr Mode ==================== */
+
+/* Main Page */
+
+:root[data-theme="dark"] .tf-profile-page {
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-back {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-profile-back:hover {
+    color: var(--text-primary);
+}
+
+/* Page Heading */
+
+:root[data-theme="dark"] .tf-profile-heading > span {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-profile-heading h1 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-heading p {
+    color: var(--text-secondary);
+}
+
+/* Profile Card*/
+
+:root[data-theme="dark"] .tf-profile-card {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+:root[data-theme="dark"] .tf-profile-banner {
+    background: linear-gradient(120deg, #344B3C, #29382F);
+}
+
+:root[data-theme="dark"] .tf-profile-avatar {
+    background: var(--primary);
+    color: #17231B;
+    border-color: var(--surface);
+}
+
+/* User Details */
+
+:root[data-theme="dark"] .tf-profile-user-details h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-user-details p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-profile-status {
+    background: #294436;
+    color: #83C99D;
+}
+
+/* Dividers And Section Headings */
+
+:root[data-theme="dark"] .tf-profile-divider {
+    background: var(--border);
+}
+
+:root[data-theme="dark"] .tf-profile-section-heading h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-section-heading p {
+    color: var(--text-secondary);
+}
+
+/* Profile Information */
+
+:root[data-theme="dark"] .tf-profile-info-icon {
+    background: var(--surface-soft);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-profile-info-item label {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-profile-info-item strong {
+    color: var(--text-primary);
+}
+
+/* Edit Profile Button */
+
+:root[data-theme="dark"] .tf-profile-edit-btn {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-profile-edit-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+}
+
+/* Editable Inputs */
+
+:root[data-theme="dark"] .tf-profile-field input {
+    background: var(--background);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-field input::placeholder {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-profile-field input:focus {
+    background: var(--surface-soft);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 185, 154, 0.12);
+}
+
+/* Success And Error Messages */
+
+:root[data-theme="dark"] .tf-profile-message.success {
+    background: #294436;
+    border-color: #3D624B;
+    color: #83C99D;
+}
+
+:root[data-theme="dark"] .tf-profile-message.error {
+    background: #492E2D;
+    border-color: #68413D;
+    color: #E58A82;
+}
+
+/* Form Actions */
+
+:root[data-theme="dark"] .tf-profile-save-btn {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #17231B;
+}
+
+:root[data-theme="dark"] .tf-profile-save-btn:hover:not(:disabled) {
+    background: #A9D5B5;
+    border-color: #A9D5B5;
+}
+
+:root[data-theme="dark"] .tf-profile-cancel-btn {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-cancel-btn:hover:not(:disabled) {
+    background: #344B3C;
+    color: var(--text-primary);
+}
+
+/* Profile Footer */
+
+:root[data-theme="dark"] .tf-profile-footer {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-profile-footer span:first-child {
+    color: var(--primary);
+}
+
+/* Loading And Error States */
+
+:root[data-theme="dark"] .tf-profile-loading,
+:root[data-theme="dark"] .tf-profile-error {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .tf-profile-error h2 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .tf-profile-error p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .tf-profile-error button {
+    background: var(--primary);
+    color: #17231B;
 }

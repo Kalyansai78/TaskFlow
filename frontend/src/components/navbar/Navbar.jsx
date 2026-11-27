@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,11 +8,14 @@ import {
     FiLogOut,
     FiUser,
     FiGrid,
-    FiInfo
+    FiInfo,
+    FiBell
 } from "react-icons/fi";
 
 import "./Navbar.css";
 import { authActions } from "../../store";
+
+import { apiV3 } from "../../api/axios";
 
 const Navbar = () => {
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -20,9 +23,42 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [unreadCount, setUnreadCount] = useState(0);
 
     const username = sessionStorage.getItem("username") || "User";
     const email = sessionStorage.getItem("email") || "";
+
+    useEffect(() => {
+        const fetchNotifications = async () => {
+            if (!isLoggedIn) {
+                setUnreadCount(0);
+                return;
+            }
+
+            try {
+                const response = await apiV3.get("/notifications");
+
+                setUnreadCount(response.data.unreadCount || 0);
+
+            } catch (error) {
+                console.error("Notification error:", error.message);
+            }
+        };
+
+        fetchNotifications();
+
+        // Listen for read/delete changes
+        window.addEventListener("notificationsUpdated", fetchNotifications);
+
+        // Refresh unread count every 30 seconds
+        const interval = setInterval(fetchNotifications, 30000);
+
+        return () => {
+            window.removeEventListener("notificationsUpdated", fetchNotifications);
+            clearInterval(interval);
+        };
+
+    }, [isLoggedIn]);
 
     const initials = username
         .split(" ")
@@ -51,7 +87,7 @@ const Navbar = () => {
         <header className="tf-navbar">
             <div className="tf-navbar-container">
 
-                {/* BRAND */}
+                {/* Brand */}
                 <Link to="/" className="tf-navbar-brand" onClick={closeMenu}>
                     <span className="tf-navbar-logo">
                         <FiCheckSquare />
@@ -62,7 +98,7 @@ const Navbar = () => {
                     </span>
                 </Link>
 
-                {/* MOBILE MENU BUTTON */}
+                {/* Mobile Menu Button */}
                 <button
                     type="button"
                     className="tf-navbar-toggle"
@@ -73,7 +109,7 @@ const Navbar = () => {
                     {menuOpen ? <FiX /> : <FiMenu />}
                 </button>
 
-                {/* NAVIGATION */}
+                {/* Navigation */}
                 <nav className={`tf-navbar-menu ${menuOpen ? "tf-navbar-menu-open" : ""}`}>
 
                     <div className="tf-navbar-links">
@@ -92,7 +128,7 @@ const Navbar = () => {
                                 </NavLink>
                                  
                                 <NavLink
-                                    to="/todo"
+                                    to="/dashboard"
                                     className={({ isActive }) =>
                                         `tf-navbar-link ${isActive ? "tf-navbar-link-active" : ""}`
                                     }
@@ -140,7 +176,7 @@ const Navbar = () => {
 
                     </div>
 
-                    {/* AUTHENTICATION ACTIONS */}
+                    {/* Authentication Actions */}
                     <div className="tf-navbar-actions">
 
                         {!isLoggedIn ? (
@@ -160,9 +196,30 @@ const Navbar = () => {
                                 >
                                     Get started
                                 </Link>
+
                             </>
+                            
                         ) : (
                             <>
+                                {/* Notification Bell */}
+                                <button
+                                    type="button"
+                                    className="tf-navbar-notification"
+                                    onClick={() => {
+                                        closeMenu();
+                                        navigate("/notifications");
+                                    }}
+                                    aria-label={`Notifications, ${unreadCount} unread`}
+                                >
+                                    <FiBell />
+
+                                    {unreadCount > 0 && (
+                                        <span className="tf-notification-count">
+                                            {unreadCount > 99 ? "99+" : unreadCount}
+                                        </span>
+                                    )}
+                                </button>
+
                                 <div className="tf-navbar-profile">
                                     <div className="tf-navbar-avatar">
                                         {initials || "U"}

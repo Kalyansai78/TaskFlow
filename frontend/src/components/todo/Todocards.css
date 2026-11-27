@@ -29,7 +29,7 @@
     }
 }
 
-/* CARD TOP */
+/* Card Top */
 
 .task-card-top {
     display: flex;
@@ -72,7 +72,7 @@
     font-size: 13px;
 }
 
-/* CARD CONTENT */
+/* Card Content */
 
 .task-card-content {
     flex: 1;
@@ -103,7 +103,7 @@
     text-decoration-color: #a6b7a8;
 }
 
-/* CARD ACTIONS */
+/* Card Actions */
 
 .task-card-actions {
     display: flex;
@@ -158,6 +158,7 @@
     gap: 7px;
 }
 
+.task-view-btn,
 .task-edit-btn,
 .task-delete-btn {
     width: 34px;
@@ -210,8 +211,7 @@
     }
 }
 
-
-/* TASK CARD BADGES */
+/* Task Card Badges */
 
 .task-card-badges {
     display: flex;
@@ -243,4 +243,411 @@
 .priority-low {
     background: #e5f2e7;
     color: #47815b;
+}
+
+/* Task Due Date */
+
+.task-due-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #edf4ee;
+    color: #527966;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.task-due-date svg {
+    font-size: 12px;
+}
+
+.due-date-overdue {
+    background: #fce9e6;
+    color: #c45c50;
+}
+
+/* Task Category Badges */
+
+.task-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.category-work {
+    background: #e8efff;
+    color: #5473b8;
+}
+
+.category-personal {
+    background: #f3eafa;
+    color: #9064ad;
+}
+
+.category-study {
+    background: #e4f3f0;
+    color: #43877b;
+}
+
+.category-projects {
+    background: #fff0df;
+    color: #b77b3c;
+}
+
+/* Expandable Card Description */
+
+.task-description {
+    transition: color 0.2s ease;
+}
+
+.task-description-expanded {
+    color: #526b59;
+}
+
+.task-read-more {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    margin-top: -13px;
+    margin-bottom: 18px;
+    border: none;
+    background: transparent;
+    color: #638b6c;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.task-read-more:hover {
+    color: #304b3b;
+}
+
+/* View Task Button */
+
+.task-view-btn:hover {
+    border-color: #cbdccf;
+    background: #edf5ee;
+    color: #527966;
+}
+
+/* Task CHecklist Preview */
+
+.task-checklist-preview {
+    margin-top: 17px;
+    padding: 13px;
+    background: #f8faf6;
+    border: 1px solid #edf0e9;
+    border-radius: 11px;
+}
+
+.task-checklist-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #718277;
+}
+
+.task-checklist-heading strong {
+    color: #527966;
+    font-size: 10px;
+}
+
+.task-checklist-progress {
+    height: 5px;
+    background: #e6ece5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.task-checklist-progress-fill {
+    height: 100%;
+    background: #6c9879;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.task-checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.task-checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.task-checklist-item span {
+    color: #6c9879;
+    font-size: 13px;
+}
+
+.task-checklist-item p {
+    margin: 0;
+    color: #526b59;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.task-checklist-item .task-checklist-done {
+    color: #6c9879;
+}
+
+.task-checklist-item:has(.task-checklist-done) p {
+    text-decoration: line-through;
+    color: #9aa69c;
+}
+
+.task-checklist-more {
+    color: #829187;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* Reminder Badge */
+
+.task-reminder-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #edf5ef;
+    border: 1px solid #d9e8dc;
+    color: #527b65;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    width: fit-content;
+}
+
+.task-reminder-date svg {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+/* Mobile layout */
+
+@media (max-width: 576px) {
+    .task-reminder-date {
+        font-size: 11px;
+        padding: 7px 9px;
+    }
+}
+
+/* Tasks Cards Global Dark Mode */
+
+:root[data-theme="dark"] .todo-card {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+:root[data-theme="dark"] .todo-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Card Title And Description */
+
+:root[data-theme="dark"] .task-card-content h3 {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .task-card-content p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .task-title-done {
+    color: var(--text-secondary) !important;
+}
+
+/* Status Badges */
+
+:root[data-theme="dark"] .todo-card .status-pending {
+    background: #493A27;
+    color: #E5B66E;
+}
+
+:root[data-theme="dark"] .todo-card .status-completed {
+    background: #294436;
+    color: #83C99D;
+}
+
+/* Priority Badges */
+
+:root[data-theme="dark"] .todo-card .priority-high {
+    background: #492E2D;
+    color: #E58A82;
+}
+
+:root[data-theme="dark"] .todo-card .priority-medium {
+    background: #493A27;
+    color: #E5B66E;
+}
+
+:root[data-theme="dark"] .todo-card .priority-low {
+    background: #294436;
+    color: #83C99D;
+}
+
+/* Category Badges */
+
+:root[data-theme="dark"] .todo-card .category-work {
+    background: #293A55;
+    color: #9AB8EF;
+}
+
+:root[data-theme="dark"] .todo-card .category-personal {
+    background: #40334D;
+    color: #C7A5E0;
+}
+
+:root[data-theme="dark"] .todo-card .category-study {
+    background: #25433E;
+    color: #8CCFC0;
+}
+
+:root[data-theme="dark"] .todo-card .category-projects {
+    background: #493729;
+    color: #E5B17C;
+}
+
+/* Dates And Reminders */
+
+:root[data-theme="dark"] .todo-card .task-date {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .todo-card .task-due-date {
+    background: #294436;
+    color: #9ACBA8;
+}
+
+:root[data-theme="dark"] .todo-card .due-date-overdue {
+    background: #492E2D;
+    color: #E58A82;
+}
+
+:root[data-theme="dark"] .todo-card .task-reminder-date {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+/* Read More */
+
+:root[data-theme="dark"] .todo-card .task-read-more {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .todo-card .task-read-more:hover {
+    color: var(--text-primary);
+}
+
+/* Checklist Preview */
+
+:root[data-theme="dark"] .todo-card .task-checklist-preview {
+    background: var(--surface-soft);
+    border-color: var(--border);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-heading {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-heading strong {
+    color: var(--primary);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-progress {
+    background: var(--border);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-item p {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-item:has(.task-checklist-done) p {
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .todo-card .task-checklist-more {
+    color: var(--text-secondary);
+}
+
+/* Card Action Separator */
+
+:root[data-theme="dark"] .todo-card .task-card-actions {
+    border-top-color: var(--border);
+}
+
+/* Complete Button */
+
+:root[data-theme="dark"] .todo-card .task-complete-btn {
+    background: #294436;
+    border-color: #3B624B;
+    color: #9ACBA8;
+}
+
+:root[data-theme="dark"] .todo-card .task-complete-btn:hover {
+    background: #527966;
+    border-color: #527966;
+    color: #FFFFFF;
+}
+
+/* Undo Button */
+
+:root[data-theme="dark"] .todo-card .task-undo-btn {
+    background: #493A27;
+    border-color: #66502F;
+    color: #E5B66E;
+}
+
+:root[data-theme="dark"] .todo-card .task-undo-btn:hover {
+    background: #A97836;
+    color: #FFFFFF;
+}
+
+/* View And Edit Buttons */
+
+:root[data-theme="dark"] .todo-card .task-view-btn,
+:root[data-theme="dark"] .todo-card .task-edit-btn {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .todo-card .task-view-btn:hover,
+:root[data-theme="dark"] .todo-card .task-edit-btn:hover {
+    background: #344B3C;
+    border-color: var(--primary);
+    color: #DCE9DF;
+}
+
+/* Delete Button */
+
+:root[data-theme="dark"] .todo-card .task-delete-btn {
+    background: var(--surface-soft);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .todo-card .task-delete-btn:hover {
+    background: #492E2D;
+    border-color: #80504B;
+    color: #E58A82;
 }

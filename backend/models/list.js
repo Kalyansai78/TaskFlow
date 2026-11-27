@@ -19,18 +19,53 @@ const listSchema = new mongoose.Schema(
             default: false,
         },
 
+        completedAt: {
+            type: Date,
+            default: null,
+        },
+
         priority: {
             type: String,
             enum: ["High", "Medium", "Low"],
             default: "Medium",
         },
 
-        user: [
+        dueDate: {
+            type: Date,
+            default: null
+        },
+
+        reminderAt: {
+            type: Date,
+            default: null
+        },
+
+        category: {
+            type: String,
+            enum: ["Work", "Personal", "Study", "Projects"],
+            default: "Personal",
+        },
+
+        subtasks: [
             {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "User",
+                title: {
+                    type: String,
+                    required: true,
+                    trim: true,
+                },
+                completed: {
+                    type: Boolean,
+                    default: false,
+                },
             },
         ],
+
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        },
+        
     },
     {
         timestamps: true,
