@@ -1,25 +1,26 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    throw new Error("EMAIL_USER and EMAIL_PASS must be configured.");
+if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY must be configured.");
 }
 
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const sendEmail = (to, subject, text, html) => {
-    return transporter.sendMail({
-        from: `"TaskFlow" <${process.env.EMAIL_USER}>`,
-        to,
+const sendEmail = async (to, subject, text, html) => {
+    const { data, error } = await resend.emails.send({
+        from: process.env.EMAIL_FROM || "TaskFlow <onboarding@resend.dev>",
+        to: [to],
         subject,
         text,
         html
     });
+
+    if (error) {
+        console.error("Resend email error:", error);
+        throw new Error(error.message || "Failed to send email");
+    }
+
+    return data;
 };
 
 module.exports = sendEmail;
