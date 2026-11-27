@@ -1,8 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from 'react-toastify';
 
 import {
     BrowserRouter as Router,
@@ -206,11 +205,11 @@ const AppLayout = () => {
 
         <ToastContainer
             position="top-right"
-            autoClose={2500}
+            autoClose={3000}
             newestOnTop
             closeOnClick
             pauseOnHover
-            theme={theme}
+            theme="light"
         />
     </>
   );

@@ -3,7 +3,7 @@ import "./Signup.css";
 import Heading from "./Heading";
 import { Link, useNavigate } from "react-router-dom";
 import { apiV1 } from "../../api/axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import {
     FiMail,
     FiUser,
@@ -119,7 +119,6 @@ const Signup = () => {
 
     return (
         <main className="tf-auth-page">
-            <ToastContainer position="top-right" autoClose={2500} />
 
             <div className="tf-auth-layout">
 

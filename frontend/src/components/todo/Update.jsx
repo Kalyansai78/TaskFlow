@@ -111,7 +111,7 @@ const Update = ({ display, task, onUpdated }) => {
                 onUpdated(response.data.list);
             }
 
-            display("none");
+            display();
 
         } catch (error) {
             console.error(
@@ -249,7 +249,7 @@ const Update = ({ display, task, onUpdated }) => {
                 <button
                     type="button"
                     className="btn btn-danger my-4 mx-3"
-                    onClick={() => display("none")}
+                    onClick={() => display()}
                     disabled={loading}
                 >
                     CLOSE

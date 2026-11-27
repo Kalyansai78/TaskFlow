@@ -201,3 +201,13 @@ select:focus-visible {
     background: #344B3C;
     color: #FFFFFF;
 }
+
+/* React Toastify visibility */
+.Toastify__toast-container {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+.Toastify__toast {
+    z-index: 999999 !important;
+}
