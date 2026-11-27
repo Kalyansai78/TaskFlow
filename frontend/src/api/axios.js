@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const API_ROOT =
-    import.meta.env.VITE_API_URL || "http://localhost:1000";
+const API_ROOT = (
+    import.meta.env.VITE_API_URL || "http://localhost:1000"
+).replace(/\/+$/, "");
 
 const createApi = (version) => {
     const instance = axios.create({
