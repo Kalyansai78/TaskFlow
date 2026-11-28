@@ -1676,8 +1676,6 @@ const Todo = ({ view = "dashboard" }) => {
                                 );
 
                                 setShowUpdate(false);
-
-                                toast.success("Task updated successfully!");
                             }}
                         />
 
